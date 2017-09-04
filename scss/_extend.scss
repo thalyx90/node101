@@ -1,0 +1,38 @@
+.container{
+	border:1px red solid;
+}
+
+.container>div{
+	border:1px green solid;
+	@include make-row();
+}
+
+.container>div>div{
+	border:1px blue solid;
+	@include make-col(12);
+}
+
+@media (min-width: 32em) {
+
+	.container>div>div:nth-child(1),
+	.container>div>div:nth-child(2),
+	.container>div>div:nth-child(3),
+	.container>div>div:nth-child(4){
+		@include make-col(6);
+	}   
+}
+@media (min-width: 40em) {
+
+	.container>div>div:nth-child(3),
+	.container>div>div:nth-child(4),
+	.container>div>div:nth-child(5){
+		@include make-col(4);
+	}
+   
+}
+
+
+
+
+
+
